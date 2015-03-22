@@ -77,8 +77,6 @@ typedef crypto_uint64 u64;
    (ROTL64(a,56) & li_64(FF000000FF000000)))
 #endif /* IS_LITTLE_ENDIAN */
 
-typedef enum { LONG, SHORT } Var;
-
 /* NIST API begin */
 
 typedef unsigned char BitSequence_gr;
@@ -94,7 +92,7 @@ typedef struct {
                                data buffer */
   int columns;              /* no. of columns in state */
   int statesize;            /* total no. of bytes in state */
-  Var v;                    /* LONG or SHORT */
+  int v;                    /* LONG or SHORT */
 } hashState_groestl;
 
 HashReturn_gr init_groestl(hashState_groestl*);
